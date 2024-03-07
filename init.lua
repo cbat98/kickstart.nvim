@@ -571,6 +571,8 @@ require('lazy').setup({
             },
           },
         },
+        csharp_ls = {},
+        powershell_es = {},
       }
 
       -- Ensure the servers and tools above are installed
