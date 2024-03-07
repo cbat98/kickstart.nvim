@@ -576,7 +576,7 @@ require('lazy').setup({
         },
         csharp_ls = {},
         powershell_es = {
-          cmd = { 'pwsh', '-NoProfile', '-NoLogo', '-Command', '{ "./PowerShellEditorServices/Start-EditorServices.ps1 -SessionDetailsPath ./session.json" }' },
+          bundle_path = localAppData .. '/nvim-data/mason/packages/powershell-editor-services',
         },
       }
 
