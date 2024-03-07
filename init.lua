@@ -572,7 +572,9 @@ require('lazy').setup({
           },
         },
         csharp_ls = {},
-        powershell_es = {},
+        powershell_es = {
+          cmd = { 'pwsh', '-NoProfile', '-NoLogo', '-Command', '{ "./PowerShellEditorServices/Start-EditorServices.ps1 -SessionDetailsPath ./session.json" }' },
+        },
       }
 
       -- Ensure the servers and tools above are installed
