@@ -85,7 +85,7 @@ P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
 -- Set variable for AppData\Local
-local localAppData = os.getenv 'localappdata'
+local localAppData = os.getenv('localappdata') or ""
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
