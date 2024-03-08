@@ -160,6 +160,12 @@ vim.opt.colorcolumn = '80'
 -- Disable line wrap
 vim.wo.wrap = false
 
+-- Convert tabs to spaces
+vim.opt.expandtab = true
+
+-- Set default tab width to 4 spaces
+vim.opt.shiftwidth = 4
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
