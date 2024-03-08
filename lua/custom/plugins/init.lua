@@ -17,6 +17,7 @@ return {
       }
     end,
   },
+
   {
     'toppair/peek.nvim',
     event = 'VeryLazy',
@@ -31,6 +32,7 @@ return {
       vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
     end,
   },
+
   {
     'ggandor/leap.nvim',
     event = 'VeryLazy',
