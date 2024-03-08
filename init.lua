@@ -589,7 +589,7 @@ require('lazy').setup({
             },
           },
         },
-        csharp_ls = {},
+        omnisharp = {},
         powershell_es = {
           bundle_path = localAppData .. '/nvim-data/mason/packages/powershell-editor-services',
         },
