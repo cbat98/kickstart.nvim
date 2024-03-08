@@ -154,6 +154,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 12
 
+-- Show color column to indicate line length
+vim.opt.colorcolumn = '80'
+
 -- Disable line wrap
 vim.wo.wrap = false
 
