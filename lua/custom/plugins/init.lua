@@ -51,4 +51,12 @@ return {
       vim.keymap.set('n', '<leader>lg', vim.cmd.LazyGit, { desc = 'Open [L]azy[G]it' })
     end,
   },
+
+  {
+    'navarasu/onedark.nvim',
+    priority = 1000,
+    init = function()
+      vim.cmd.colorscheme 'onedark'
+    end,
+  },
 }
