@@ -59,4 +59,10 @@ return {
       vim.cmd.colorscheme 'onedark'
     end,
   },
+
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = true,
+  },
 }
