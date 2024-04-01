@@ -623,6 +623,7 @@ require('lazy').setup({
 
   { -- Autoformat
     'stevearc/conform.nvim',
+    lazy = false,
     keys = {
       {
         '<leader>f',
