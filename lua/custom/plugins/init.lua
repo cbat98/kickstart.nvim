@@ -63,6 +63,17 @@ return {
   {
     'akinsho/toggleterm.nvim',
     version = '*',
-    config = true,
+    config = function()
+      require('toggleterm').setup()
+    end,
+    opts = function()
+      vim.opt.shell = vim.fn.executable 'powershell' and 'powershell' or 'bash'
+      vim.opt.shellcmdflag =
+        '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+      vim.opt.shellredir = '-RedirectStandardOutput %s -NoNewWindow -Wait'
+      vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+      vim.opt.shellquote = ''
+      vim.opt.shellxquote = ''
+    end,
   },
 }
