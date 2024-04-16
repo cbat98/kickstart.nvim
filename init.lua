@@ -588,6 +588,7 @@ require('lazy').setup({
           bundle_path = localAppData .. '/nvim-data/mason/packages/powershell-editor-services',
           settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } },
         },
+        yamlfmt = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -637,7 +638,7 @@ require('lazy').setup({
       },
     },
     opts = {
-      notify_on_error = false,
+      notify_on_error = true,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -650,6 +651,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        yaml = { 'yamlfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
