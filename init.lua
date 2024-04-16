@@ -604,6 +604,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
         'markdownlint-cli2', -- Used to format markdown documents
+        'json-lsp', -- Used to format json
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
