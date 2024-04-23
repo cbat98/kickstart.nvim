@@ -17,22 +17,6 @@ return {
       }
     end,
   },
-
-  {
-    'toppair/peek.nvim',
-    event = 'VeryLazy',
-    build = 'deno task --quiet build:fast',
-    config = function()
-      require('peek').setup {
-        auto_load = false,
-        theme = 'light',
-        app = 'browser',
-      }
-      vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
-      vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
-    end,
-  },
-
   {
     'ggandor/leap.nvim',
     event = 'VeryLazy',
@@ -41,7 +25,6 @@ return {
       vim.keymap.set('n', 'S', '<Plug>(leap-backward)')
     end,
   },
-
   {
     'kdheepak/lazygit.nvim',
     dependencies = {
@@ -51,7 +34,6 @@ return {
       vim.keymap.set('n', '<leader>lg', vim.cmd.LazyGit, { desc = 'Open [L]azy[G]it' })
     end,
   },
-
   {
     'navarasu/onedark.nvim',
     priority = 1000,
@@ -59,7 +41,6 @@ return {
       vim.cmd.colorscheme 'onedark'
     end,
   },
-
   {
     'akinsho/toggleterm.nvim',
     version = '*',
@@ -84,5 +65,15 @@ return {
         vim.g.vmt_list_indent_text = '  '
       end,
     },
+  },
+  {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    build = 'cd app && npm install',
+    init = function()
+      vim.g.mkdp_filetypes = { 'markdown' }
+      vim.g.mkdp_theme = 'light'
+    end,
+    ft = { 'markdown' },
   },
 }
