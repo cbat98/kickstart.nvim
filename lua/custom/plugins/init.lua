@@ -14,6 +14,7 @@ return {
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.diagnostics.markdownlint_cli2.with { args = { '$FILENAME' } },
         },
+        debug = true,
       }
     end,
   },
