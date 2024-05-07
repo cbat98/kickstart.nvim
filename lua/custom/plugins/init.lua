@@ -36,10 +36,10 @@ return {
     end,
   },
   {
-    'navarasu/onedark.nvim',
+    'bluz71/vim-moonfly-colors',
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'moonfly'
     end,
   },
   {
