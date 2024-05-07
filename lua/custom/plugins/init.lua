@@ -52,13 +52,18 @@ return {
     end,
   },
   {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    build = 'cd app && npm install',
-    init = function()
-      vim.g.mkdp_filetypes = { 'markdown' }
-      vim.g.mkdp_theme = 'light'
+    'toppair/peek.nvim',
+    event = { 'VeryLazy' },
+    build = 'deno task --quiet build:fast',
+    config = function()
+      require('peek').setup {
+        auto_load = false,
+        theme = 'light',
+        app = 'webview',
+        filetype = { 'markdown' },
+      }
+      vim.api.nvim_create_user_command('Peek', require('peek').open, {})
+      vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
     end,
-    ft = { 'markdown' },
   },
 }
