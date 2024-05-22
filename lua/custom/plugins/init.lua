@@ -4,7 +4,6 @@
 -- See the kickstart.nvim README for more information
 return {
   {
-    -- none-ls (community fork of null-ls) for linting
     'nvimtools/none-ls.nvim',
     event = 'VimEnter',
     config = function()
