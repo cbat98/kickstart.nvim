@@ -609,7 +609,6 @@ require('lazy').setup({
         },
         omnisharp = {},
         powershell_es = {
-          bundle_path = localAppData .. '/nvim-data/mason/packages/powershell-editor-services',
           settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } },
         },
         yamlfmt = {},
