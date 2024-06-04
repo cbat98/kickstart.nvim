@@ -155,7 +155,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 14
+vim.opt.scrolloff = 11
 
 -- Show color column to indicate line length
 vim.opt.colorcolumn = '80'
