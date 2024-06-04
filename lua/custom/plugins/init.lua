@@ -36,10 +36,6 @@ return {
   },
   {
     'bluz71/vim-moonfly-colors',
-    priority = 1000,
-    init = function()
-      vim.cmd.colorscheme 'moonfly'
-    end,
   },
   {
     'https://github.com/mzlogin/vim-markdown-toc.git',
@@ -73,6 +69,13 @@ return {
         columns = { 'icon' },
       }
       vim.keymap.set('n', '-', vim.cmd.Oil, { desc = 'Oil' })
+    end,
+  },
+  {
+    'navarasu/onedark.nvim',
+    priority = 1000,
+    init = function()
+      vim.cmd.colorscheme 'onedark'
     end,
   },
 }
