@@ -613,7 +613,31 @@ require('lazy').setup({
         },
         omnisharp = {},
         powershell_es = {
-          settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } },
+          settings = {
+            powershell = {
+              codeFormatting = {
+                AddWhitespaceAroundPipe = true,
+                AutoCorrectAliases = true,
+                AvoidSemicolonsAsLineTerminators = true,
+                UseConstantStrings = false,
+                Preset = 'OTBS',
+                OpenBraceOnSameLine = true,
+                NewLineAfterOpenBrace = true,
+                NewLineAfterCloseBrace = true,
+                PipelineIndentationStyle = 'IncreaseIndentationForFirstPipeline',
+                TrimWhitespaceAroundPipe = true,
+                WhitespaceBeforeOpenBrace = true,
+                WhitespaceBeforeOpenParen = true,
+                WhitespaceAroundOperator = true,
+                WhitespaceAfterSeparator = true,
+                WhitespaceBetweenParameters = true,
+                WhitespaceInsideBrace = true,
+                IgnoreOneLineBlock = true,
+                AlignPropertyValuePairs = true,
+                UseCorrectCasing = true,
+              },
+            },
+          },
         },
         yamlfmt = {},
       }
