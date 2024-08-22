@@ -4,4 +4,7 @@ return {
   init = function()
     vim.cmd.colorscheme 'onedark'
   end,
+  opts = {
+    transparent = true,
+  },
 }
