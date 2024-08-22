@@ -1,7 +1,7 @@
 return {
-  'toppair/peek.nvim',
+  'cbat98/peek.nvim',
   event = { 'VeryLazy' },
-  build = 'deno task --quiet build:fast',
+  build = 'deno task --quiet build:insecure',
   config = function()
     require('peek').setup {
       auto_load = false,
