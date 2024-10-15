@@ -84,9 +84,6 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
--- Set variable for AppData\Local
-local localAppData = os.getenv 'localappdata' or ''
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -112,14 +109,6 @@ vim.opt.mouse = ''
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
-
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
--- vim.schedule(function()
---   vim.opt.clipboard = 'unnamedplus'
--- end)
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -647,35 +636,6 @@ require('lazy').setup({
             },
           },
         },
-        omnisharp = {},
-        powershell_es = {
-          settings = {
-            powershell = {
-              codeFormatting = {
-                AddWhitespaceAroundPipe = true,
-                AutoCorrectAliases = true,
-                AvoidSemicolonsAsLineTerminators = true,
-                UseConstantStrings = false,
-                Preset = 'OTBS',
-                OpenBraceOnSameLine = true,
-                NewLineAfterOpenBrace = true,
-                NewLineAfterCloseBrace = true,
-                PipelineIndentationStyle = 'IncreaseIndentationForFirstPipeline',
-                TrimWhitespaceAroundPipe = true,
-                WhitespaceBeforeOpenBrace = true,
-                WhitespaceBeforeOpenParen = true,
-                WhitespaceAroundOperator = true,
-                WhitespaceAfterSeparator = true,
-                WhitespaceBetweenParameters = true,
-                WhitespaceInsideBrace = true,
-                IgnoreOneLineBlock = true,
-                AlignPropertyValuePairs = true,
-                UseCorrectCasing = true,
-              },
-            },
-          },
-        },
-        yamlfmt = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -691,9 +651,6 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
-        'markdownlint-cli2', -- Used to format markdown documents
-        'json-lsp', -- Used to format json
-        'yaml-language-server', -- Used to diagnose yaml
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -728,26 +685,9 @@ require('lazy').setup({
     },
     opts = {
       notify_on_error = false,
-      format_on_save = function(bufnr)
-        -- -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- -- have a well standardized coding style. You can add additional
-        -- -- languages here or re-enable it for the disabled ones.
-        -- local disable_filetypes = { c = true, cpp = true }
-        -- local lsp_format_opt
-        -- if disable_filetypes[vim.bo[bufnr].filetype] then
-        --   lsp_format_opt = 'never'
-        -- else
-        --   lsp_format_opt = 'fallback'
-        -- end
-        -- return {
-        --   timeout_ms = 500,
-        --   lsp_format = false, -- lsp_format_opt,
-        -- }
-        return false
-      end,
+      format_on_save = false,
       formatters_by_ft = {
         lua = { 'stylua' },
-        yaml = { 'yamlfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -872,8 +812,6 @@ require('lazy').setup({
       }
     end,
   },
-
-  -- NOTE: The color scheme has been disabled here to allow a cusom one to take priority
 
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
