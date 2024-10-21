@@ -627,6 +627,29 @@ require('lazy').setup({
             },
           },
         },
+        powershell_es = {
+          settings = {
+            powershell = {
+              codeFormatting = {
+                AddWhitespaceAroundPipe = true,
+                AutoCorrectAliases = true,
+                AvoidSemicolonsAsLineTerminators = true,
+                Preset = 'OTBS',
+                OpenBraceOnSameLine = true,
+                NewLineAfterOpenBrace = true,
+                NewLineAfterCloseBrace = true,
+                WhitespaceBeforeOpenBrace = true,
+                WhitespaceBeforeOpenParen = true,
+                WhitespaceAroundOperator = true,
+                WhitespaceAfterSeparator = true,
+                WhitespaceBetweenParameters = true,
+                WhitespaceInsideBrace = true,
+                AlignPropertyValuePairs = true,
+                UseCorrectCasing = true,
+              },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -643,7 +666,6 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'csharp-language-server',
-        'powershell-editor-services',
         'markdownlint-cli2',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
