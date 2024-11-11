@@ -668,6 +668,7 @@ require('lazy').setup({
         'csharp-language-server',
         'eslint_d',
         'html-lsp',
+        'json-lsp',
         'lua-language-server',
         'markdownlint-cli2',
         'powershell-editor-services',
