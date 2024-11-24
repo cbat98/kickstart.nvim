@@ -662,6 +662,11 @@ require('lazy').setup({
         },
       }
 
+      local additional_servers = {
+        nixd = {
+        },
+      }
+
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
@@ -699,6 +704,20 @@ require('lazy').setup({
           end,
         },
       }
+
+        require('lspconfig').nixd.setup({
+          cmd = { "nixd" },
+          settings = {
+            nixd = {
+              nixpkgs = {
+                expr = "import <nixpkgs> { }",
+              },
+              formatting = {
+                command = { "alejandra" },
+              },
+            },
+          },
+        })
     end,
   },
 
