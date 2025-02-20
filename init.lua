@@ -158,6 +158,7 @@ vim.wo.wrap = false
 vim.opt.expandtab = true
 
 -- Set default tab width to 4 spaces
+vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
 -- [[ Basic Keymaps ]]
