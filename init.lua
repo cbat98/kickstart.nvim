@@ -196,6 +196,9 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+-- Selectively remove whitespace errors
+vim.keymap.set('n', '<leader>tw', '<cmd>%s/^\\s\\+$\\|\\s\\+$//gc<CR>', { desc = '[T]rim [W]hitespace' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -938,7 +941,6 @@ require('lazy').setup({
       flavour = 'mocha',
     },
     init = function()
-
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
