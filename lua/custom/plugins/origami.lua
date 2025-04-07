@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
   opts = {
     keepFoldsAcrossSessions = false,
-    hOnlyOpensOnFirstColumn = true,
+    foldKeymaps = { hOnlyOpensOnFirstColumn = true },
   },
   init = function()
     vim.opt.foldlevelstart = 99
