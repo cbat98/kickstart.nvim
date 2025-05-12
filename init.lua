@@ -748,6 +748,7 @@ require('lazy').setup({
         -- 'eslint-lsp',
         -- 'html-lsp',
         -- 'typescript-language-server',
+        'typos-lsp',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
